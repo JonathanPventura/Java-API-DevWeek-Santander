@@ -2,21 +2,38 @@ package me.dio.domain;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity(name = "tb_resident")
 public class Resident {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
+    @Column(unique = true)
     private int cpf;
+    @Column(unique = true)
     private String email;
     private int phone;
-    @OneToOne
-    private Apartament apartament;
-    @OneToMany
-    private Packages packages;
-    @OneToMany
-    private Tasks tasks;
+
+    private String bloco;
+    private String apartamento;
+
+    public String getBloco() {
+        return bloco;
+    }
+
+    public void setBloco(String bloco) {
+        this.bloco = bloco;
+    }
+
+    public String getApartamento() {
+        return apartamento;
+    }
+
+    public void setApartamento(String apartamento) {
+        this.apartamento = apartamento;
+    }
 
     public long getId() {
         return id;
@@ -58,27 +75,4 @@ public class Resident {
         this.phone = phone;
     }
 
-    public Apartament getApartament() {
-        return apartament;
-    }
-
-    public void setApartament(Apartament apartament) {
-        this.apartament = apartament;
-    }
-
-    public Packages getPackages() {
-        return packages;
-    }
-
-    public void setPackages(Packages packages) {
-        this.packages = packages;
-    }
-
-    public Tasks getTasks() {
-        return tasks;
-    }
-
-    public void setTasks(Tasks tasks) {
-        this.tasks = tasks;
-    }
 }
