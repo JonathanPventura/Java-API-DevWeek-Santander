@@ -23,4 +23,10 @@ public class PackagesServiceImpl implements PackagesService {
     public Packages createToPackages(Packages residentToCreate) {
         return packageRepository.save(residentToCreate);
     }
+
+    @Override
+    public void delete(Long id) {
+        Packages encomenda = this.findByIdPackages(id);
+        this.packageRepository.delete(encomenda);
+    }
 }

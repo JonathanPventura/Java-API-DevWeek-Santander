@@ -7,4 +7,6 @@ public interface PackagesService {
     Packages findByIdPackages(Long id);
 
     Packages createToPackages(Packages residentToCreate);
+
+    void delete(Long id);
 }

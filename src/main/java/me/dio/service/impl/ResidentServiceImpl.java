@@ -32,4 +32,25 @@ public class ResidentServiceImpl implements ResidentService {
 
         return residentRepository.save(residentToCreate);
     }
+
+    @Override
+    public void delete(Long id) {
+        Resident resident = findByIdResident(id);
+        this.residentRepository.delete(resident);
+
+    }
+
+    @Override
+    public Resident atualizarResident(Long id, Resident atualizarResident) {
+        Resident dbResident = this.findByIdResident(id);
+
+        dbResident.setName(atualizarResident.getName());
+        dbResident.setEmail(atualizarResident.getEmail());
+        dbResident.setBloco(atualizarResident.getBloco());
+        dbResident.setApartamento(atualizarResident.getApartamento());
+        dbResident.setPhone(atualizarResident.getPhone());
+        return this.residentRepository.save(dbResident);
+    }
+
+
 }

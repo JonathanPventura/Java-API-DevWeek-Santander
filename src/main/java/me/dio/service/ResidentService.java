@@ -10,6 +10,9 @@ public interface ResidentService {
 
     Resident createToResident(Resident residentToCreate);
 
+    void delete(Long id);
+
+    Resident atualizarResident(Long id,Resident atualizarResident);
 
 
 }
