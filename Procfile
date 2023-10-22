@@ -1,0 +1,1 @@
+web: java -jar build/libs/API_JAVA_DEV_WEEK_SANTANDER-0.0.1-SNAPSHOT.jar
