@@ -12,6 +12,15 @@ public abstract class Itens {
     private Long id;
     private String data;
     private String description;
+    private Long residentId;
+
+    public Long getResidentId() {
+        return residentId;
+    }
+
+    public void setResidentId(Long residentId) {
+        this.residentId = residentId;
+    }
 
     public Long getId() {
         return id;

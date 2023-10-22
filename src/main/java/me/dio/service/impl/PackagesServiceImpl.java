@@ -3,9 +3,10 @@ package me.dio.service.impl;
 import me.dio.domain.Packages;
 import me.dio.domain.repository.PackagesRepository;
 import me.dio.service.PackagesService;
+import org.springframework.stereotype.Service;
 
 import java.util.NoSuchElementException;
-
+@Service
 public class PackagesServiceImpl implements PackagesService {
 
     private final PackagesRepository packageRepository;
